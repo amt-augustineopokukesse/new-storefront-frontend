@@ -1,0 +1,69 @@
+.password-reset-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    .password-reset {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: -100px;
+        .container-header {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 48px;
+            color: #0085FF;
+        }
+        .request-text {
+            font-family: 'Roboto';
+            font-weight: 400;
+            font-size: 24px;
+            color: #222222;
+            margin-top: -14px;
+        }
+        #pw-error, #email-error {
+            font-family: 'Roboto';
+            font-size: 16px;    
+            color: #FF3131;
+            position: relative;
+            top: -15px;
+            display: none;
+        }
+        .emailForm, .passwordForm {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            justify-content: center;
+            align-items: center;
+            .email-div, .password {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+            }
+            .send-button{
+                text-align: center;
+                width: 210px;
+                height: 46px;
+                border: none;
+                background: #0085FF;
+                border-radius: 8px;
+                color: #FFFFFF;
+                cursor: pointer;
+                font-family: 'Poppins';
+                font-weight: 700;
+                font-size: 16px;
+                &:hover{
+                    background: #59AFFF;
+                }
+            }
+        }
+    }
+    
+}

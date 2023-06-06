@@ -1,0 +1,95 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 55%;
+    .header-text {
+        font-family: 'Poppins';
+        font-size: 56px;
+        color: #0085FF;
+    }
+    #error-div {
+        font-family: 'Roboto';
+        font-size: 16px;    
+        color: #FF3131;
+        position: relative;
+        top: -15px;
+        display: none;
+    }
+    .FormContainer {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .business-name{
+            width: 100%;
+        }
+        .input-names {
+            height: 58px;
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            .name-box {
+                width: 50%;
+            }
+        }
+        .email {
+            margin-top: 31px;
+            width: 100%;
+        }
+        .password {
+            display: flex;
+            flex-direction: column;
+            gap: 31px;
+            margin-top: 31px;
+            width: 100%;
+            
+        }
+        .submit-button{
+            width: 45%;
+            height: 46px;
+            margin-top: 31px;
+            background: #0085FF;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Poppins';
+            font-size: 16px;
+            &:hover {
+                background: #59AFFF;
+            }
+        }
+    }
+    .old-member{
+        margin-top: 26px;
+        color: #484848;
+        font-size: 16px;
+        font-family: 'Roboto';
+        .login-text {
+            color: #0085FF;
+            text-decoration: none;
+        }
+    }
+    .business-signup{
+        margin-top: 26px;
+        color: #222222;
+        font-family: 'Roboto';
+        .business-signup-link {
+            color: #0085FF;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
+
+.email-mismatch {
+    font-size: 10px;
+    color: red;
+    display: none;
+}

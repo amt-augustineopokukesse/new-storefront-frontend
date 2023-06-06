@@ -1,0 +1,146 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: inherit;
+        .content-header {
+            font-family: var(--name-font);
+            font-weight: 700;
+            font-size: var(--other-font-size);
+            color: var(--body-font-color);
+            margin-top: 3%;
+        }
+        .customised-section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            .section {
+                display: flex;
+                justify-content: center;
+                align-items: baseline;
+                width: auto;
+                gap: 25px;
+                margin: 100px auto 30px;
+                color: var(--body-font-color);
+                .section-name {
+                    font-family: var(--name-font);
+                    font-weight: 700;
+                    font-size: var(--other-font-size);
+                }
+                .more {
+                    font-family: var(--body-font);
+                    font-weight: 500;
+                    font-size: var(--body-font-size);
+                    display: none;
+                }
+            }
+            .section-items {
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                row-gap: 30px;
+                column-gap: 5%;
+                margin-bottom: 50px;
+                
+                .tile {
+                    width: 300px;
+                    height: 480px;
+                    background: var(--secondary-color);
+                    border-radius: 4px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    font-family: var(--body-font);
+                    box-sizing: border-box;
+                    .discount-hover{
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 15%;
+                        height: 6%;
+                        background-color: rgba($color: #000000, $alpha: 0.4);
+                        top: -2.8%;
+                        left: -42.5%;
+                        border-radius: 4px 0 0 0;
+                    }
+                    .link {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 100%;
+                        height: 70%;
+                        gap: 5%;
+                        .image {
+                            width: 90%;
+                            height: 50%;
+                            display: flex;
+                            justify-content: center;
+                            background-size: cover;
+                            .item-image{
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                        .item-name {
+                            font-size: 20px;
+                            color: var(--body-font-color);
+                        }
+                        .price {
+                            font-weight: 700;
+                            font-size: var(--body-font-size);
+                            color: var(--body-font-color);
+                        }
+                        .available {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            .number-available {
+                                font-size: 16px;
+                                color: var(--body-font-color);
+                                margin: 0%;
+                                position: relative;
+                                top: -15%;
+                            }
+                        }
+                    }
+                    
+                    .addToCart {
+                        width: 206px;
+                        height: 40px;
+                        background: var(--primary-color);
+                        color: var(--secondary-color);
+                        border-radius: 4px;
+                        outline: none;
+                        border: none;
+                        font-weight: 600;
+                        font-size: 20px;
+                        font-family: var(--body-font);
+                        cursor: pointer;
+                        border: 1px solid transparent;
+                        &:hover {
+                            border: 1px solid var(--body-font-color);
+                            color: var(--body-font-color);
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

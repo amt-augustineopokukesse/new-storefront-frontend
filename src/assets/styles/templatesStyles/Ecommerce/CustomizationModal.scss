@@ -1,0 +1,95 @@
+.customization-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.customization-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    width: 650px;
+    height: 80%;
+    opacity: 0.95;
+    //position: relative;
+    //top: 50px;
+    //z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+  
+.close-button {
+    width: 100%;
+    height: 5%;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    background-color: #ff0033;
+    font-size: 15px;
+    letter-spacing: 1px;
+    opacity: 0.5;
+    box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.25);
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.shipping-address-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    width: 650px;
+    height: 80%;
+    opacity: 0.95;
+    position: relative;
+    //top: 50px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    .shipping-info-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        //align-items: center;
+        width: 80%;
+        height: 80%;
+        gap: 5%;
+        .shipping-form-item {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            input {
+                height: 30px;
+                box-sizing: border-box;
+                padding: 5px 10px;
+                border-radius: 4px;
+                border: 1px solid rgb(194, 192, 192);
+            }
+        }
+        .save-shipping-info {
+            height: 30px;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(20, 169, 219, 0.842);
+            border-radius: 4px;
+            &:hover {
+                background-color: deepskyblue;
+            }
+        }
+    }
+}
+
+  

@@ -1,0 +1,10 @@
+!.env
+Dockerfile
+docker-compose.yml
+Dockerfile.dev
+Jenkinsfile
+.eslintrc.json
+.gitignore
+node_modules/
+dist/
+.pre-commit-config.yaml

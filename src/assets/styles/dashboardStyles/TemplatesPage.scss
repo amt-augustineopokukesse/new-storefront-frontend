@@ -1,0 +1,121 @@
+.template-page{
+    display: flex;
+    flex-direction: column;
+    background-color: #EFEFEF;
+    padding-top: 3.2rem;
+    margin: 0;
+    gap: 1rem;
+    width: 100%;
+    height: 88.5vh;
+    .category-button{
+        position: relative;
+        margin-left: 2rem;
+        border: 2px solid #00284C;
+        width: 15rem;
+        border-radius: 0;
+        height: 4.5rem;
+        font-size: 22px;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        font-family: poppins;
+        color: #222222;
+        cursor: pointer;
+        background-color: #FFFFFF;
+        display: flex;
+        gap: 2.3rem;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.25);
+        &::after{
+            position: absolute;
+            left: 13rem;
+            content: '';
+          border-top: 5px solid black;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+    .category-list{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 18.8vh;
+        left:16.3vw;
+        padding: 0;
+        z-index: 1;
+        list-style-type: none;
+        background-color: #FFFFFF;
+        width: 15rem;
+        height: 12rem;
+        box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.25);
+        .category-item{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 20rem;
+            margin: 0;
+            padding: 0;
+            &::after{
+                position: absolute;
+                top: 3.5rem;
+                content: '';
+                border-bottom: 1px solid #AAAAAA;
+                width: 10rem;
+            }
+            .category-list-buttons{
+                width: 80%;
+                text-align: center;
+                height: 100%;
+                cursor: pointer;
+                border: none;
+                font-weight: 400;
+                font-size: 20px;
+                font-family: roboto;
+                cursor: pointer;
+                background-color: transparent;
+                .logo-name-span{
+                    display: flex;
+                    gap: 1rem;
+                    .category-logos{
+                    width: 1.5rem;
+                    height: 1.3rem;
+                    }
+                }
+                .shapeslogo-name-span{
+                    display: flex;
+                    gap: 0.5rem;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    .template{
+        width: 100%;
+        height: 100%;
+        &::before{
+            content: '';
+            width: 83vw;
+            height: 1.3px;
+            position: absolute;
+            left: 26.5vh;
+            background-color: rgba(128,128,128, 0.5);
+        }
+        .template-header{
+            font-size: 27px;
+            color: #222222;
+            margin: 2rem 0 0 2rem;
+            font-family: roboto;
+        }
+    }
+}
+
+
+

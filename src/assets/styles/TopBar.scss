@@ -1,0 +1,90 @@
+.top-bar{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+
+}
+.login-register-buttons{
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 15rem;
+    height: 2rem;
+}
+.login-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: #222222;
+}
+.register-button{
+    width: 9.5rem;
+    cursor: pointer;
+    background-color: #0085ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 16px;
+}
+.harmburger-menu{
+    position: relative;
+    display: none;
+}
+.menu-button{
+    width: 3rem;
+    height: 2.5rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menu-list{
+    position: absolute;
+    z-index: 1;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    top: 1rem;
+    right: 0.6rem;
+    font-family: 'Poppins';
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column-reverse; 
+    width: 8rem;
+    height: 5rem;
+    box-shadow: 0.5px 0.5px 1px 0.3px #AAAAAA ,-0.5px -0.5px 3px 0.1px #AAAAAA;
+}
+.menu-item{
+    margin: 0;
+    height: 2rem;
+}
+.menu-item > .register-button{
+    height: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'Roboto';
+    letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 768px) {
+    .harmburger-menu{
+        display: flex;
+    }
+    .login-register-buttons{
+        display: none;
+    }
+
+
+}

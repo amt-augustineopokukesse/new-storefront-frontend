@@ -1,0 +1,136 @@
+.close{
+    position: absolute;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+
+}
+.close-modal{
+    @extend .close;
+    color: #222222;
+    border-radius: 50px;
+    right: 1rem;
+    top: 1rem;
+    
+    width: 4rem;
+    height: 2rem;
+    color: red;
+    font-size: 20px;
+}
+.write-review-button{
+    border-radius: 10px;
+    background-color: gainsboro;
+    border: none;
+    position: absolute;
+    top: 2.5rem;
+    cursor: pointer;
+    right: 5.5rem;
+    width: 8rem;
+    height: 2rem;
+}
+.reviews{
+    overflow-x: scroll;
+    margin: 3rem 0 0 0;
+    width: 90%;
+    height: 80%;
+    .review-component{
+        margin-top: 0.5rem;
+        width: 100%;
+        min-height: 4rem;
+        border-bottom: 1px solid gray;
+        .profile{
+            width: 15rem;
+            height: 3.5rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 0.5rem;
+            .profileName-date{
+                display: flex;
+                font-family: 'roboto';
+                flex-direction: column;
+                gap: 0;
+                .profile-name{
+                    margin: 0;
+                    font-size: 13px;
+                }
+                .review-date{
+                    margin: 0;
+                    font-size: 12px;
+                    color: gray;
+                }
+            }
+            .profile-photo{
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                background-color: aqua;
+            }
+        }
+        .review-text{
+            font-size: 15px;
+            font-family: 'roboto';
+            padding-bottom: 0.5rem;
+            width: 100%;
+            min-height: 1rem;
+        }
+    }
+    
+}
+.close-form-modal{
+    @extend .close;
+    top: 2vh;
+    right: 1.5vw;
+    font-size: 15px;
+    color: red;
+}
+.review-form{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 3rem;
+    width: 25vw;
+    height: 35vh;
+    .user-name{
+        font-size: 12px;
+        margin-left: 1rem;
+        p{
+            text-transform: capitalize;
+        }
+    }
+    h4{
+        font-size: 20px;
+        font-family: 'roboto';
+        margin: 0 0 0 1rem;
+    }
+    .review-star{
+        margin: 0 0 0 1rem;
+    }
+    .review-input{
+        padding: 0.5rem;
+        font-family: 'roboto';
+        font-size: 15px;
+        outline: 1px solid gray;
+        border-radius: 5px;
+        border: none;
+        width: 90%;
+        margin: 0 auto 0 auto;
+        height: 10rem;
+        &:focus{
+            outline: 2px solid blue;
+        }
+    }
+    .post-review-button{
+        width: 6vw;
+        height: 4vh;
+        align-self: flex-end;
+        margin: 1rem 1rem 0 0;
+        background-color: blue;
+        cursor: pointer;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+    }
+}

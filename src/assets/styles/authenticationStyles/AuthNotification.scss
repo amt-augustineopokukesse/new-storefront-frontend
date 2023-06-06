@@ -1,0 +1,36 @@
+.authentication{
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 6rem auto;
+    width: 30rem;
+    height: 10rem;
+    .note-header{
+        font-family: 'Poppins';
+        margin: 0;
+        font-size: 56px;
+        letter-spacing: 2px;
+        font-weight: 600;
+        color: #0085FF;
+    }
+    .note-text{
+        margin: 0;
+        font-family: 'Roboto';
+        font-size: 20px;
+    }
+    .note-login-button{
+        width: 11rem;
+        height: 46px;
+        font-size: 14px;
+        font-weight: 400;
+        cursor: pointer;
+        background-color: #0085ff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+    }
+}
+

@@ -1,0 +1,86 @@
+.hero {
+    width: 100%;
+    height: 418px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--secondary-color);
+    box-sizing: border-box;
+    position: relative;
+    .scroll-div {
+        width: 100%;
+        height: 40px;
+        background-color: var(--primary-color);
+        font-size: 20px;
+        font-family: 'Roboto';
+        display: flex;
+        align-items: center;
+        //opacity: 0.9;
+        color: var(--secondary-color);
+        position: absolute;
+        bottom: 0;
+        .promotion-message {
+            display: inline-block;
+            animation: rolling 20s linear infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            width: max-content;
+            padding-right: 100px;
+        }
+    }
+    .hero-header {
+        font-family: var(--name-font);
+        font-weight: 700;
+        font-size: var(--name-font-size);
+        margin: 0 auto;
+    }
+    .hero-text {
+        font-family: var(--body-font);
+        font-weight: 500;
+        font-size: var(--body-font-size);;
+        margin: 0px;
+    }
+    
+    
+    .subscribe {
+        box-sizing: border-box;
+        width: 30%;
+        height: 46px;
+        position: relative;
+        right: -30%;
+        bottom: -40px;
+        font-family: var(--body-font);
+        display: flex;
+        .subscribe-input {
+            box-sizing: border-box;
+            height: 100%;
+            width: 70%;
+            padding: 0 24px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            &::placeholder {
+                color: #D5D5D5; 
+            }
+        }
+        .subscribe-button {
+            height: 100%;
+            width: 30%;
+            border: none;
+            cursor: pointer;
+            color: var(--secondary-color);
+            background-color: var(--primary-color);
+            font-size: 24px;
+            
+        }
+    }
+}
+@keyframes rolling {
+    0% {
+      transform: translateX(500%);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+}

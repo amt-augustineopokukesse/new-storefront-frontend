@@ -1,0 +1,65 @@
+.support-page{
+    width: 100%;
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 87vh;
+    background-color: #EFEFEF;
+}
+.message-box{
+    margin-top: 2rem;
+    width: 80vw;
+    height: 40vh;
+    padding: 1.5rem;
+    resize: none;
+    border: none;
+    box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.25);
+}
+.message-box:focus{
+    outline: none;
+}
+.message-box::placeholder{
+    font-size: 15px;
+    font-family: roboto;
+    color: #CACACA;
+
+}
+.send-span{
+    width: 82.5vw;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+.send-message-button{
+    background-color: #00284C;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    font-size: 15px;
+    font-family: roboto;
+    width: 11rem;
+    height: 2.3rem;
+}
+.sent-message-notification{
+    position: absolute;
+    bottom: 88vh;
+    font-size: 20px;
+    font-family: roboto;
+    background-color: #59AFFF;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.25);
+    width: 30vw;
+    height: 2.5rem;
+}
+
+.none{
+    display: none;
+}

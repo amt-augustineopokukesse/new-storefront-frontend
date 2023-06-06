@@ -1,0 +1,22 @@
+.orders-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EFEFEF;
+    gap: 2rem;
+    padding-top: 3.2rem;
+    margin: 0;
+    width: 100%;
+    height: 85vh;
+    font-family: 'Roboto';
+    .customer-orders-header {
+        font-family: 'Poppins';
+        color: #00284C;
+    }
+    .orders-table {
+        width: 80%;
+        margin-left: 0%;
+        background-color: #e4e7e9;
+        padding: 0%;
+    }
+}

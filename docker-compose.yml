@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  storefront-frontend:
+    image: storefront-frontend
+    container_name: storefront-frontend
+    build :
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3002:3000'
+    restart: on-failure

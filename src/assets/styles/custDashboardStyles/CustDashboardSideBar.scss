@@ -1,0 +1,46 @@
+.cust-navigation-sidebar{
+    background-color: #176cb6;
+    width: 13vw;
+    height: 91vh;
+    .navigation-sidebar-list{
+        padding: 2rem 0 0 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        width: inherit;
+        height: 15rem;
+        li{
+            width: 100%;
+            height: 2rem; 
+        }
+    
+    }
+    .dashboard-button{
+        background-color: transparent;
+        font-size: 18px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: 300;
+        gap: 1rem;
+        font-family: 'Roboto';
+        color: #FFFFFF;
+        border: none;
+        width: 100%;
+        text-align: left;
+        height: 100%;
+        padding-left: 2rem;
+        cursor: pointer;
+        &:hover{
+            background-color: #0458a1;
+        }
+    }
+    .link{
+        text-decoration: none;
+    }
+
+}
+

@@ -1,0 +1,99 @@
+.customer-dashboard-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFEFEF;
+    //gap: 2rem;
+    //padding-top: 3.2rem;
+    width: 100%;
+    height: 100%;
+    padding: 0% 0% 0 2%;
+    font-family: 'Roboto';
+    .customer-dashboard-header {
+        box-sizing: border-box;
+        font-size: 40px;
+        font-weight: 700;
+        font-family: 'Poppins';
+        color: #176cb6;
+        border-bottom: 1px solid #a4b5c4;
+        //background-color: #f9fafc;
+        width: 90%;
+        text-align: center;
+        margin: 0% auto;
+        margin-right: 7.5%;
+        margin-bottom: 2%;
+        .customer-header-text {
+            position: relative;
+            left: -5%;
+        }
+    }
+    .store-display {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        column-gap: 30px;
+        row-gap: 30px;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+        //padding-top: 2%;
+        //padding-left: 0%;
+        padding-right: 5%;
+        box-sizing: border-box;
+        
+    }
+}
+
+
+
+.store-object {
+    width: 200px;
+    height: 200px;
+    /* background-color: red; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+    transition: all 300ms;
+    position: relative;
+    &:hover {
+        transform: scale(1.05);
+    }
+    .visit-store {
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        padding: 4px;
+        border-radius: 4px;
+        background-color: #fff;
+        border-top: 2px solid gold;
+        border-left: 2px solid gold;
+        &:hover {
+            background-color: gold;
+            border-top: 4px solid black;
+            border-left: 4px solid black;
+
+        }
+    };
+    .object-details {
+        position: absolute;
+        bottom: 2px;
+        left:2px;
+        width: 96%;
+        height: 60px;
+        padding-left: 4px;
+        background-color: #fff;
+        border-radius: 4px;
+        display: flex;
+        flex-flow: column;
+        align-items: start;
+        // opacity: 0.8;
+        justify-content: space-evenly;
+        & p {
+            font-size: 14px;
+        }
+    }
+}

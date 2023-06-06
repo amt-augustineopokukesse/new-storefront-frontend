@@ -1,0 +1,39 @@
+.auth-login{
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 6rem auto;
+    width: 30rem;
+    height: 10rem;
+    .auth-login-header{
+        margin: 0;
+        font-family: 'Poppins';
+        font-size: 56px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-weight: 600;
+        color: #0085FF;
+    }
+    .auth-login-text{
+        margin: 0;
+        font-family: 'Roboto';
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .auth-login-button{
+        width: 11rem;
+        height: 2.5rem;
+        font-size: 14px;
+        font-weight: 400;
+        cursor: pointer;
+        background-color: #0085ff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+

@@ -1,0 +1,17 @@
+a {
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f6f6f6;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: all 300ms;
+}
+

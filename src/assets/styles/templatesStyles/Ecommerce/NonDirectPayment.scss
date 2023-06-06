@@ -1,0 +1,122 @@
+.ndp-main-div {
+    padding: 20px;
+    background-color: #f5f5f5;
+    font-family: var(--body-font);
+    width: 80%;
+    margin: 0 auto;
+    .ndp-header {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-family: var(--name-font);
+    }
+    .ndp-content-container {
+        display: flex;
+        .ndp-payment-panel {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 20px;
+            margin-right: 20px;
+            .ndp-tabs-container {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+                .tab {
+                    background-color: #ddd;
+                    border: none;
+                    border-radius: 4px;
+                    padding: 10px 20px;
+                    margin-right: 10px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                  
+                    &:hover {
+                      background-color: #ccc;
+                    }
+                  
+                    &.active {
+                      background-color: #888;
+                      color: #fff;
+                    }
+                }
+                
+            }
+            .ndp-payment-details {
+                .transfer-details-header {
+                    text-align: center;
+                }
+                ul {
+                  list-style-type: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  li {
+                    display: flex;
+                    //justify-content: space-between;
+                    margin-bottom: 10px;
+              
+                    span {
+                      font-weight: bold;
+                      margin-right: 10px;
+                    }
+                  }
+                }
+            }
+        }
+        .ndp-summary-div {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 20px;
+            .ndp-summary-list {
+                list-style-type: none;
+                padding: 0;
+              
+                li {
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 10px;
+              
+                  span {
+                    font-weight: bold;
+                  }
+                }
+            }
+        }
+    }
+    .ndp-pay-button {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.25);
+        &:hover {
+          background-color: #45a049;
+        }
+      
+        &:disabled {
+          background-color: #ddd;
+          cursor: not-allowed;
+        }
+    }
+    .complete-order {
+        margin-left: 10px;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.25);
+        &:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+    }
+    
+}
+  

@@ -1,0 +1,46 @@
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24vw;
+    height: 13rem;
+    color: #FFFFFF;
+    background-color: #222222;
+    .footer-logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 52px;
+        font-family: 'roboto';
+        font-weight: 800;
+        width: 8.5rem;
+        height: 8.5rem;
+    }
+    .social-media-span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    .contact-span{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+        p{
+            margin: 0;
+            font-size: 18px;
+            font-weight: 300;
+        }
+    }
+    
+    .footer-text{
+        width: 23rem;
+        height: 4rem;
+        font-size: 18px;
+        font-weight: 300;
+        color: #FFFFFF;
+        line-height: 22px;
+    }
+}

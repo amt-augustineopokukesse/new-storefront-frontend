@@ -1,0 +1,84 @@
+.dashboard-page{
+    display: flex;
+    flex-direction: column;
+    background-color: #EFEFEF;
+    gap: 2rem;
+    padding-top: 3.2rem;
+    margin: 0;
+    width: 100%;
+    height: 85vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    .top-containers{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 10.5rem;
+        .block-view{
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 20%;
+            height: 100%;
+            h3{
+                border-bottom: 1px solid #AAAAAA;
+                text-align: center;
+                margin: 0;
+                font-family: 'poppins';
+                font-size: 25px;
+                font-weight: 500;
+                color: #00284C;
+                padding-bottom: 0.8rem;
+                width: 80%;
+            }
+            p{
+                font-size: 25px;
+                font-family: 'Roboto';
+                color: #00284C;
+                margin-top: 0.6rem;
+            }
+        }
+    }
+    .grid-top {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 5%;
+        padding-left: 4%;
+        position: relative;
+        top: 7%;
+        .grid-header{
+            font-size: 30px;
+            width: 40%;
+            font-weight: 700;
+            margin: 0;
+            font-family: 'Roboto';
+            color: #0a4379;
+            
+        }
+        .edit-order-button {
+            margin: 0%;
+        }
+
+    }
+    .grid-container{
+        width: 100%;
+        height: 68vh;
+        display: grid;
+        //place-items: center;
+        margin-top: 5%;
+        margin-right: 5%;
+        margin-left: 4%;
+        .edit-order-form {
+            position: absolute;
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-40%, -50%);
+        }
+    
+    }
+}
