@@ -4,6 +4,7 @@ import '../../assets/styles/dashboardStyles/DasboardPages.scss';
 import ProjectsAndTemplates from "./ProjectsAndTemplates";
 import { DashboardPage } from "./DashboardPage";
 import { ProfilePage } from "./ProfilePage";
+import { CustomersPage } from "./CustomersPage";
 
 export const DashboardPages: React.FC = () => {
     return (
@@ -19,7 +20,8 @@ export const DashboardPages: React.FC = () => {
                     value: "",
                     editmode: false
                     }} />} />
-                   <Route path="support" element={<SupportPage />} /> 
+                   <Route path="support" element={<SupportPage />} />
+                   <Route path="customers-page" element={<CustomersPage />} /> 
                 </Routes>
         </div>
             

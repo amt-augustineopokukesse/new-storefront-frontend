@@ -14,23 +14,22 @@ interface Project {
     orders: Order[];
 }
 
+const orderInit: Order = {
+    amount: 0,
+    created_at: "",
+    paid: false,
+    delivery_completed: false,
+    shipping_reciepient_address: "",
+    delivery_level_reached: "",
+    id: "",
+    userId: "",
+    payment_method: "",
+    pickup_mode: "",
+    products: "",
+    shipping_reciepient_contacts: [],
+    shipping_reciepient_names: []
+}
 export const DashboardPage: React.FC = () => {
-
-    const orderInit: Order = {
-        amount: 0,
-        created_at: "",
-        paid: false,
-        delivery_completed: false,
-        shipping_reciepient_address: "",
-        delivery_level_reached: "",
-        id: "",
-        userId: "",
-        payment_method: "",
-        pickup_mode: "",
-        products: "",
-        shipping_reciepient_contacts: [],
-        shipping_reciepient_names: []
-    }
 
     const [loader, setLoader] = useState<boolean>(false);
     const [earnings, setEarnings] = useState(0);
@@ -85,17 +84,16 @@ export const DashboardPage: React.FC = () => {
 
 
     const columns: GridColDef[] = [
-        { field: "id", headerName: "Order ID", width: 250 },
+        { field: "id", headerName: "Order ID", width: 300 },
         { field: "orderDate", headerName: "Order Date", width: 95 },
         { field: "orderAmount", headerName: "Amount", width: 95 },
         { field: "orderPaid", headerName: "Payment", width: 80 },
-        { field: "deliveryLevel", headerName: "Delivery Level", width: 150},
+        { field: "deliveryLevel", headerName: "Delivery Level", width: 150 },
         { field: "deliveryComplete", headerName: "Delivered", width: 120 },
         { field: "customerId", headerName: "Customer", width: 250},
         { field: "shippingAddress", headerName: "Shipping Address", width: 150},
         { field: "shippingContact", headerName: "Shipping Contact", width: 180},
         { field: "products", headerName: "Items", width: 500},
-
     ]
 
 

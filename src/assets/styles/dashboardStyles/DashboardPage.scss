@@ -1,3 +1,145 @@
+.item-display {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+.customers-page-container {
+    
+    .modal-source {
+        height: 60vh;
+        width: 70vw;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        position: relative;
+        border-top: 4px solid #00284c;
+        padding: 20px;
+
+        .loader {
+            position: absolute;
+            top: 45%;
+            left: 45%;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 15px;
+            padding: 0px;
+            border-radius: 50%;
+            background: #ff000030;
+            color: #fff;
+            cursor: pointer;
+            margin: 4px;
+            &:hover {
+                background-color: #fd9999;
+            }
+        }
+    }
+}
+
+.customer-modal-customer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(157, 154, 212, 0.42);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custcard {
+    width: 153px;
+    height: 174px;
+    position: relative;
+    background: #f6f6f6;
+    border-radius: 4px;
+    border: 1px solid #00284c;
+    box-shadow: 1px 5px 60px 0px rgba(16, 10, 136, 0.4196078431);
+}
+
+.custcard .custcard-border-top {
+    width: 80%;
+    height: 3.5%;
+    background: #0085ff;
+    margin: auto;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.custcard span {
+ font-weight: 600;
+ color: #00284c;
+ text-align: center;
+ display: block;
+ padding-top: 10px;
+ font-size: 16px;
+}
+
+.custcard .job {
+ font-weight: 400;
+ color: #00284c;
+ display: flex;
+ text-align: center;
+ padding-top: 5px;
+ font-size: 12px;
+ align-items: center;
+ justify-content: center;
+}
+
+.ccustcardard .img {
+ width: 70px;
+ height: 80px;
+ background: #6b64f3;
+ border-radius: 15px;
+ margin: auto;
+ margin-top: 25px;
+}
+
+.custcard button {
+ padding: 8px 25px;
+ display: block;
+ margin: auto;
+ border-radius: 4px;
+ border: 1px solid #00284c;
+ margin-top: 30px;
+ background: #fff;
+ color: #00284c;
+ font-weight: 600;
+ cursor: pointer;
+ position: absolute;
+ bottom: 12px;
+ left: 14px;
+ transition: all 300ms;
+}
+
+.custcard button:hover {
+ background: #534bf3;
+ color: #fff;
+ border: none;
+ outline: none;
+}
+
+.spanna {
+    transition: all 300ms;
+}
+
+.custcard:hover {
+    button {
+        background: #534bf3;
+        color: #fff;
+        border: none;
+        outline: none;
+    }
+    .spanna {
+        transform: scale(1.2);
+    }
+}
+
 .dashboard-page{
     display: flex;
     flex-direction: column;

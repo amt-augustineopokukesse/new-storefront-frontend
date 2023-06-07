@@ -46,6 +46,14 @@ export const DashboardSideBar: React.FC = () => {
                         </button>
                     </Link>
                 </li>
+                <li className='support'>
+                    <Link to="customers-page" className='link'>
+                        <button className='dashboard-button'>
+                            <img src={supportlogo} alt="" />
+                            Customers
+                        </button>
+                    </Link>
+                </li>
             </ul>
         </div>
         <Outlet />

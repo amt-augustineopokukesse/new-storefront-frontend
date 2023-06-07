@@ -166,7 +166,7 @@ export interface StoreState {
   }
 
 export interface Order {    
-    amount: 0;
+    amount: number;
     created_at: string;
     paid?: boolean;
     delivery_completed?: boolean;
@@ -179,4 +179,9 @@ export interface Order {
     shipping_reciepient_contacts?: string[];
     shipping_reciepient_names?: string[];
     userId?: string;
+}
+
+export interface Project {
+  id: number;
+  orders: Order[];
 }
