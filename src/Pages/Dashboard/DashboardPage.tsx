@@ -46,8 +46,7 @@ export const DashboardPage: React.FC = () => {
     const getAllStores = async () => {
         try {
             const response = await dispatch(getStores());
-            if (response) {
-                console.log(response.payload.data);
+            if (response) {                
                 if (response.payload.data) {
                     const store = response.payload.data;
                     const totalAmountPaid: number = store.projects.reduce((accumulator: number, project: Project) => {

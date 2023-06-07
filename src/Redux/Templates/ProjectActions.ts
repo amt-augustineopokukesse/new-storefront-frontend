@@ -39,6 +39,24 @@ export const getStores = createAsyncThunk(
       }
     }
   );
+
+  // handle customer gets all his orders info
+  export const getOrders = createAsyncThunk(
+    "project/getMyOrders",
+    async () => {
+      try {
+        const response = await api.get("/market/orders");
+        return response.data;
+      } catch (error) {
+        if (error instanceof AxiosError) {
+          if (error.response) {
+            return error.response.data.message;
+          }
+        }
+        return "An error occurred";
+      }
+    }
+  );
   
   // handle GetAll Published Stores
   export const getPublishedStores = createAsyncThunk(
