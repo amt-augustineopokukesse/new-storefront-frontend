@@ -10,9 +10,8 @@ import { useFormik } from 'formik';
 import { BiWindowClose } from 'react-icons/bi';
 import { GrDocumentUpdate } from 'react-icons/gr';
 import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
-import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
-import { MdOutlineBorderColor, MdOutlineNewLabel } from 'react-icons/md';
+import { MdOutlineBorderColor } from 'react-icons/md';
 
 
 
@@ -155,17 +154,6 @@ export const DashboardPage: React.FC = () => {
           </Page>
         </Document>
     );
-
-    /**
-     * orderDate: "",
-    orderPaid
-    orderDate: string;
-    orderPaid: string;
-    products: string[];
-    shippingAddress: string;
-    shippingContact: string[];
-    shippingReceipient: string[];
-     */
     
     const ViewDoc = () => (
         <PDFViewer style={{height: "100%", width: "80%", display: "flex", margin: "auto"}}>
@@ -191,25 +179,13 @@ export const DashboardPage: React.FC = () => {
             if (labelValues.id) {
                 setviewpdf(true);
     
-                console.log(labelValues)
                 const readerRooot = createRoot(document.getElementById('doc-content')!);
                 readerRooot.render(<ViewDoc />);
                 toast.info("Shipping Label Generated!!")
             }
         })()
-    }, [labelValues])
+    }, [labelValues, ViewDoc])
 
-    // const xxx = () => {
-    //     console.log(labelValues)
-    //     console.log("dfdfdf")
-    //     if (labelValues.id) {
-    //         setviewpdf(true);
-
-    //         console.log(labelValues)
-    //         const readerRooot = createRoot(docContainer!);
-    //         readerRooot.render(<ViewDoc />);
-    //     }
-    // }
 
     const generateOrderLabel = (params: { row: OrderRow; }) => {
         return (
@@ -218,11 +194,6 @@ export const DashboardPage: React.FC = () => {
                 onClick={(e) => {
                     e.stopPropagation();
                     setlabelValues(params.row);
-                    // xxx();
-                    
-                    // ReactDOM.render(<ViewDoc />, document.getElementById('doc-content'));
-                    // const docContainer = document.getElementById('doc-content');
-                    
                 }}
             />
         )
