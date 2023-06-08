@@ -8,10 +8,46 @@ import { Order } from '../CustDashboard/CustomerInitialState';
 import { getStores, updateDelivery } from '../../Redux/Templates/ProjectActions';
 import { useFormik } from 'formik';
 import { BiWindowClose } from 'react-icons/bi';
-  
+import { GrDocumentUpdate } from 'react-icons/gr';
+import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
+import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import { MdOutlineBorderColor, MdOutlineNewLabel } from 'react-icons/md';
+
+
+
+
 interface Project {
     id: number;
     orders: Order[];
+}
+
+interface OrderRow {
+    customerId: string;
+    deliveryComplete: string;
+    deliveryLevel: string;
+    id: string;
+    orderAmount: string;
+    orderDate: string;
+    orderPaid: string;
+    products: string[];
+    shippingAddress: string;
+    shippingContact: string[];
+    shippingReceipient: string[];
+}
+
+const OrderRowInit = {
+    customerId: "",
+    deliveryComplete: "",
+    deliveryLevel: "",
+    id: "",
+    orderAmount: "",
+    orderDate: "",
+    orderPaid: "",
+    products: [],
+    shippingAddress: "",
+    shippingContact: [],
+    shippingReceipient: [],
 }
 
 const orderInit: Order = {
@@ -29,6 +65,7 @@ const orderInit: Order = {
     shipping_reciepient_contacts: [],
     shipping_reciepient_names: []
 }
+
 export const DashboardPage: React.FC = () => {
 
     const [loader, setLoader] = useState<boolean>(false);
@@ -38,7 +75,10 @@ export const DashboardPage: React.FC = () => {
     const [totalStores, setTotalStores] = useState(0);
     const [trackOrders, setTrachOrders] = useState([orderInit]);
     const [editorder, setEditorder] = useState(false);
+    const [viewpdf, setviewpdf] = useState(false);
     const [confirmModal, setconfirmModal] = useState(false);
+    const [updateId, setUpdateId] = useState("");
+    const [labelValues, setlabelValues] = useState<OrderRow>(OrderRowInit);
 
 
     const dispatch = useAppDispatch();
@@ -81,8 +121,117 @@ export const DashboardPage: React.FC = () => {
         getAllStores();
     },[]);
 
+    const styles = StyleSheet.create({
+        page: {
+          flexDirection: 'column',
+          backgroundColor: '#E4E4E4'
+        },
+        section: {
+          margin: 10,
+          padding: 10,
+          flexGrow: 1
+        }
+      });
+    
+    const MyDocument = () => (
+        <Document>
+          <Page size="A4" style={styles.page}>
+            <View style={styles.section}>
+              <Text style={{marginBottom: "30px", textAlign: "center", fontSize: "9px", color: "red"}}>!!Confidential - Storefront - Confidential - Storefront - Confidential - Storefront - Confidential - Storefront - Confidential!!</Text>
+              <Text style={{textAlign: "center"}}>----------------------------------</Text>
+              <Text style={{color: "red", textAlign: "center"}}>Order Shipping Label</Text>
+              <Text style={{marginBottom: "50px", textAlign: "center"}}>----------------------------------</Text>
+              <Text style={{textAlign: "center"}} > Label Date</Text>
+              <Text style={{textAlign: "center", marginBottom: "30px"}} > ** {Date()} **</Text>
+              <Text style={{marginHorizontal: "50px", marginBottom: "30px"}} > ** Order ID: {labelValues.id}</Text>
+              <Text style={{marginHorizontal: "50px", marginBottom: "30px"}} > ** Order Date: {labelValues.orderDate}</Text>
+    
+              <Text style={{marginHorizontal: "50px", marginBottom: "30px"}} > ** Receipient Name: {labelValues.shippingReceipient}</Text>
+              <Text style={{marginHorizontal: "50px", marginBottom: "30px"}} > ** Receipient Address: {labelValues.shippingAddress}</Text>
+              <Text style={{marginHorizontal: "50px", marginBottom: "30px"}} > ** Receipient Contact: {labelValues.shippingContact}</Text>
+              <Text style={{marginHorizontal: "50px", marginBottom: "30px"}} > ** Expected Arrival: 48hrs after Label Date</Text>
+              <Text style={{textAlign: "center", marginTop: "50px", fontSize: "50px", color: "green"}} > {labelValues.orderPaid}</Text>
+            </View>
+          </Page>
+        </Document>
+    );
+
+    /**
+     * orderDate: "",
+    orderPaid
+    orderDate: string;
+    orderPaid: string;
+    products: string[];
+    shippingAddress: string;
+    shippingContact: string[];
+    shippingReceipient: string[];
+     */
+    
+    const ViewDoc = () => (
+        <PDFViewer style={{height: "100%", width: "80%", display: "flex", margin: "auto"}}>
+            <MyDocument />
+        </PDFViewer>
+    )
+
+    const changeOrderStatusButton = (params: { id: unknown; }) => {
+        return (
+            <MdOutlineBorderColor 
+                className='update-button'
+                onClick={(e) => {
+                    e.stopPropagation();
+                    setUpdateId(params.id as string);
+                    handleOpenEditOrder();
+                }}
+            />
+        )
+    }
+
+    useEffect(() => {
+        (() => {
+            if (labelValues.id) {
+                setviewpdf(true);
+    
+                console.log(labelValues)
+                const readerRooot = createRoot(document.getElementById('doc-content')!);
+                readerRooot.render(<ViewDoc />);
+                toast.info("Shipping Label Generated!!")
+            }
+        })()
+    }, [labelValues])
+
+    // const xxx = () => {
+    //     console.log(labelValues)
+    //     console.log("dfdfdf")
+    //     if (labelValues.id) {
+    //         setviewpdf(true);
+
+    //         console.log(labelValues)
+    //         const readerRooot = createRoot(docContainer!);
+    //         readerRooot.render(<ViewDoc />);
+    //     }
+    // }
+
+    const generateOrderLabel = (params: { row: OrderRow; }) => {
+        return (
+            <GrDocumentUpdate 
+                className='update-button'
+                onClick={(e) => {
+                    e.stopPropagation();
+                    setlabelValues(params.row);
+                    // xxx();
+                    
+                    // ReactDOM.render(<ViewDoc />, document.getElementById('doc-content'));
+                    // const docContainer = document.getElementById('doc-content');
+                    
+                }}
+            />
+        )
+    }
+
 
     const columns: GridColDef[] = [
+        { field: "labels", headerName: "Generate Label", width: 120, renderCell: generateOrderLabel },
+        { field: "update", headerName: "Update Status", width: 100, renderCell: changeOrderStatusButton },
         { field: "id", headerName: "Order ID", width: 300 },
         { field: "orderDate", headerName: "Order Date", width: 95 },
         { field: "orderAmount", headerName: "Amount", width: 95 },
@@ -91,6 +240,7 @@ export const DashboardPage: React.FC = () => {
         { field: "deliveryComplete", headerName: "Delivered", width: 120 },
         { field: "customerId", headerName: "Customer", width: 250},
         { field: "shippingAddress", headerName: "Shipping Address", width: 150},
+        { field: "shippingReceipient", headerName: "Reciever Name", width: 150},
         { field: "shippingContact", headerName: "Shipping Contact", width: 180},
         { field: "products", headerName: "Items", width: 500},
     ]
@@ -98,7 +248,7 @@ export const DashboardPage: React.FC = () => {
 
     
     const row = (order: Order) => {
-        return { id: order.id, orderDate: new Date(order.created_at).toLocaleDateString(), orderAmount: order.amount, orderPaid: order.paid ? "Paid" : "Not Paid", deliveryLevel: getdeliveryLevel(order.delivery_level_reached), deliveryComplete: order.delivery_completed ? "Yes" : "No", customerId: order.userId, shippingAddress: order.shipping_reciepient_address, shippingContact: order.shipping_reciepient_contacts, products: JSON.parse(order.products || "[]")}
+        return {id: order.id, orderDate: new Date(order.created_at).toLocaleDateString(), orderAmount: order.amount, orderPaid: order.paid ? "Paid" : "Not Paid", deliveryLevel: getdeliveryLevel(order.delivery_level_reached), deliveryComplete: order.delivery_completed ? "Yes" : "No", customerId: order.userId, shippingAddress: order.shipping_reciepient_address, shippingReceipient: order.shipping_reciepient_names, shippingContact: order.shipping_reciepient_contacts, products: JSON.parse(order.products || "[]")}
     }
 
     const getdeliveryLevel = (value?: string) => {
@@ -130,28 +280,44 @@ export const DashboardPage: React.FC = () => {
     const handleOpenEditOrder = () => {
         setconfirmModal(false)
         setEditorder(editorder ? false : true)
+        if (editorder === true) {
+            setUpdateId("");
+        }
     }
 
     const handleOpenConfirmModal = () => {
         setconfirmModal(confirmModal ? false : true)
     }
 
+    const handlePdfClose = () => {
+        setlabelValues(OrderRowInit);
+        setviewpdf(false);
+    }
+
+    const handleMe = (e: EventTarget) => {
+        if (e === document.getElementById("doc-content")) {
+            handlePdfClose();
+        }
+    }
+
     const formik = useFormik({
-        initialValues: { orderid: "", deliverylevel: ""},
+        initialValues: { orderid: updateId, deliverylevel: ""},
         onSubmit: async (values, action) => {
             try {
                 action.resetForm();
-                const { payload } = await dispatch(updateDelivery({orderId: values.orderid, deliveryLevel: values.deliverylevel}))
+                const { payload } = await dispatch(updateDelivery({orderId: updateId, deliveryLevel: values.deliverylevel}))
                 if (payload.success) {
                     toast.success(payload.message);
                     getAllStores();
                     setEditorder(false);
                 } else toast.error(payload);
                 setEditorder(false);
+                setUpdateId("");
                 return;
             } catch (error) {
                 toast.warn("An error occurred");
                 console.log(error);
+                setUpdateId("");
                 return false;
             }
         }
@@ -186,17 +352,17 @@ export const DashboardPage: React.FC = () => {
                     <BiWindowClose onClick={handleOpenEditOrder} className='order-form-close' />
                     <div onClick={handleOpenConfirmModal} className='order-pre-submit'>Submit</div>
                     <div style={{display: `${confirmModal ? "flex" : "none"}`}} className='submit-modal'>
-                        <p style={{textAlign: "center"}} className='confirm-change'>{formik.values.orderid ? `Confirm This Change for Order Id ${formik.values.orderid}` : "Confirm"}</p>
+                        <p style={{textAlign: "center"}} className='confirm-change'>{updateId ? `Confirm This Change for Order Id ${updateId}` : "Confirm"}</p>
                         <button 
-                            disabled={!formik.values.deliverylevel || !formik.values.orderid} 
+                            disabled={!formik.values.deliverylevel || !updateId} 
                             className='yes-confirm' type='submit'>Yes</button>
                         <div onClick={handleOpenConfirmModal} className='dont-confirm'>Close</div>
                     </div>
                     <div className='edit-order-div'>
                         <div className='order-input-div'>
                             <label htmlFor="order-id">Order ID</label>
-                            <input onChange={formik.handleChange} 
-                                value={formik.values.orderid}
+                            <input onChange={(e) => setUpdateId(e.target.value)} 
+                                value={updateId}
                                 name="orderid" className='order-input' type="text" id="" placeholder='Enter order id (eg. d123fvffvdvv333333)' />
                         </div>
                         <div className='order-input-div'>
@@ -229,7 +395,12 @@ export const DashboardPage: React.FC = () => {
                     />
                 </div>
             </div>
+            <div onClick={e => handleMe(e.target)} style={{display: `${viewpdf ? "flex" : "none"}`}} id='pdf-viewer'>
+                <div id='doc-content'></div>
+                <BiWindowClose onClick={handlePdfClose} className='pdf-reader-close' />
+            </div>
             {loader && <AuthLoader />}
         </div>
     )
 }
+

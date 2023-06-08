@@ -1,3 +1,51 @@
+.pdf-reader-close {
+    position: absolute;
+    right: 5%;
+    top: 7%;
+    width: 33px;
+    height: 33px;
+    transition: all 0ms;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #fbdada;
+    &:hover {
+        color: #ffffff;
+        background-color: red;
+    }
+}
+
+#pdf-viewer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #aaaaaa8e;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    #doc-content {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.update-button {
+    transition: all 300ms;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: auto;
+    &:hover {
+        transform: rotate(360deg);
+        width: 25px;
+        height:25px;
+        background-color: gold;
+    }
+}
+
 .item-display {
     height: 100%;
     width: 100%;

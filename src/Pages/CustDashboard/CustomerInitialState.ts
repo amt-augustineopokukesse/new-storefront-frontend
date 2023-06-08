@@ -166,7 +166,7 @@ export interface StoreState {
   }
 
 export interface Order {    
-    amount: number;
+    amount?: number;
     created_at: string;
     paid?: boolean;
     delivery_completed?: boolean;
