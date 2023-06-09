@@ -5,6 +5,7 @@ import { AuthLoader } from "../../../components/authComponents/AuthLoader";
 import { addProduct } from '../../../Redux/Templates/ProjectSlice';
 import api from '../../../Redux/axiosClient';
 import { toast } from 'react-toastify';
+import { BsPlusSquareFill } from "react-icons/bs";
 
 
 //const IMAGE_UPLOAD_API_KEY = import.meta.env.VITE_IMAGE_UPLOAD_URL_KEY;
@@ -111,7 +112,7 @@ const ProductsForm: React.FC = () => {
   return (
     <form className="form">
         <div className="input-containers">
-          <label className="label">Product Name:</label>
+          <label className="label">Product Name</label>
           <input
             type="text"
             value={productName}
@@ -120,7 +121,7 @@ const ProductsForm: React.FC = () => {
           />
         </div>
         <div className="input-containers">
-          <label className="label">Unit:</label>
+          <label className="label">Unit</label>
           <input
             type="text"
             value={unit}
@@ -130,7 +131,7 @@ const ProductsForm: React.FC = () => {
         </div>
 
         <div className="input-containers">
-          <label className="label">Category:</label>
+          <label className="label">Category</label>
           <input
             type="text"
             value={category}
@@ -140,7 +141,7 @@ const ProductsForm: React.FC = () => {
         </div>
 
         <div className="input-containers">
-          <label className="label">Description:</label>
+          <label className="label">Description</label>
           <input
             type="text"
             value={description}
@@ -149,7 +150,7 @@ const ProductsForm: React.FC = () => {
           />
         </div>
         <div className="input-containers">
-          <label className="label">Price:</label>
+          <label className="label">Price</label>
           <input
             type="number"
             value={price}
@@ -164,7 +165,7 @@ const ProductsForm: React.FC = () => {
           />
         </div>
         <div className="upload-container">
-          <label className="label">Product Images:</label>
+          <label className="label product-image">Product Images</label>
           <input
             type="file"
             accept="image/*"
@@ -181,7 +182,7 @@ const ProductsForm: React.FC = () => {
           {loader ? <AuthLoader /> : ""}
         </div>
         <div className="input-containers">
-          <label className="label">Discount:</label>
+          <label className="label">Discount</label>
           <input
             type="number"
             min={0}
@@ -198,7 +199,7 @@ const ProductsForm: React.FC = () => {
           />
         </div>
         <div className="input-containers">
-          <label className="label">Initial Stock:</label>
+          <label className="label">Initial Stock</label>
           <input
             type="number"
             min={0}
@@ -214,7 +215,7 @@ const ProductsForm: React.FC = () => {
           />
         </div>
         <button type="button" onClick={handleAddProduct} className="add-product">
-          Add Product
+          <BsPlusSquareFill style={{width: "25px", height: "25px", padding: "3px"}} />
         </button>
       </form>
   );

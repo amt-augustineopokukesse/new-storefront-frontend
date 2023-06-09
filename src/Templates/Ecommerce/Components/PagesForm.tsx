@@ -18,23 +18,32 @@ const PagesForm: React.FC<{ project: ProjectState }> = ({ project }) => {
     <form className='form'>
       <div className="input-containers">
         <label className="label">Add Contact Us page?</label>
+
+
         <div className="radio-group">
-          <input
-            type="radio"
-            name="contactUs"
-            value="yes"
-            checked={project.template.contactUs}
-            onChange={handleAddContactUsPage}
-          />
-          <label className="radio-label">Yes</label>
-          <input
-            type="radio"
-            name="contactUs"
-            value="no"
-            checked={!project.template.contactUs}
-            onChange={handleAddContactUsPage}
-          />
-          <label className="radio-label">No</label>
+
+          <div className="group-input">
+            <div className="radio-item-point">
+              <input
+                type="radio"
+                name="contactUs"
+                value="yes"
+                checked={project.template.contactUs}
+                onChange={handleAddContactUsPage}
+              />
+              <span className="radio-label">Yes</span>
+            </div>
+            <div className="radio-item-point">
+              <input
+                type="radio"
+                name="contactUs"
+                value="no"
+                checked={!project.template.contactUs}
+                onChange={handleAddContactUsPage}
+              />
+              <span className="radio-label">No</span>
+            </div>
+          </div>
         </div>
       </div>
       <div className="input-containers">

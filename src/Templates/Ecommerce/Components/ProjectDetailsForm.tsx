@@ -57,7 +57,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
   return (
     <form className='form'>
       <div className='input-containers'>
-        <label className="label">Add Store Name:</label>
+        <label className="label">Add Store Name</label>
         <input
           required
           type="text"
@@ -68,7 +68,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       </div>
 
       <div className='input-containers'>
-        <label className="label">Add Store Description:</label>
+        <label className="label">Add Store Description</label>
         <input
           type="text"
           value={project.description}
@@ -78,7 +78,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       </div>
 
       <div className='input-containers'>
-        <label className="label">Store Contact Number:</label>
+        <label className="label">Store Contact Number</label>
         <input
           type="tel"
           required pattern="[0-9]{10}"
@@ -96,7 +96,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       </div>
 
       <div className='input-containers'>
-        <label className="label">Store Category:</label>
+        <label className="label">Store Category</label>
         <select
           defaultValue={'Ecommerce'}          
           onChange={handleCategoryChange}
@@ -107,7 +107,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       </div>
 
       <div className='input-containers'>
-        <label className="label">Currency:</label>
+        <label className="label">Currency</label>
         <select
           defaultValue="US$"
           value={project.currency}
@@ -122,7 +122,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       </div>
 
       <div className='input-containers'>
-        <label className="label">Facebook URL:</label>
+        <label className="label">Facebook URL</label>
         <input
           type="text"
           value={project.facebookURL}
@@ -132,7 +132,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       </div>
 
       <div className='input-containers'>
-        <label className="label">Instagram URL:</label>
+        <label className="label">Instagram URL</label>
         <input
           type="text"
           value={project.instagramURL}
@@ -142,7 +142,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       </div>
 
       <div className='input-containers'>
-        <label className="label">Twitter URL:</label>
+        <label className="label">Twitter URL</label>
         <input
           type="text"
           value={project.twitterURL}
@@ -152,7 +152,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       </div>
 
       <div className='input-containers'>
-        <label className="label">Your Store Address:</label>
+        <label className="label">Your Store Address</label>
         <input
           type="text"
           value={project.address}
@@ -162,7 +162,7 @@ const ProjectDetailsForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       </div>
 
       <div className='input-containers'>
-        <label className="label">Location:</label>
+        <label className="label">Location</label>
         <input
           type="text"
           value={project.location}

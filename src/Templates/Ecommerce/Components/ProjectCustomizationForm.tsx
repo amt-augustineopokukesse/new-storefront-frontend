@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../../../store';
 import { useNavigate } from 'react-router-dom';
-
 import '../../../assets/styles/templatesStyles/Ecommerce/ProjectCustomizationForm.scss';
 import { StylingForm } from './StylingForm';
 import UploadForm from './UploadForm';
@@ -11,6 +10,13 @@ import { AuthLoader } from '../../../components/authComponents/AuthLoader';
 import { toast } from 'react-toastify';
 import { publishProject, saveProject, updateProject } from '../../../Redux/Templates/ProjectActions';
 import PagesForm from './PagesForm';
+import gif from "../../../assets/svg/132099-create.gif";
+import { TbListDetails } from "react-icons/tb";
+import { GiPaintBrush } from "react-icons/gi";
+import { BiImageAdd } from "react-icons/bi";
+import { BsFillCartCheckFill } from "react-icons/bs";
+import { SiPowerpages } from "react-icons/si";
+
 
 const ProjectCustomizationForm: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -122,12 +128,17 @@ const ProjectCustomizationForm: React.FC = () => {
       <div className="template-customization">
         <div className="sidebar">
           <ul>
-            <li onClick={() => setActiveMenu('Details')}>Project Details</li>
-            <li onClick={() => setActiveMenu('Styling')}>Styling</li>
-            <li onClick={() => setActiveMenu('Upload')}>Upload</li>
-            <li onClick={() => setActiveMenu('Products')}>Products</li>
-            <li onClick={() => setActiveMenu('Pages')}>Add Pages</li>
+            <li style={activeMenu === "Details" ? {backgroundColor: "black", color: "white", padding: "10px", borderRadius: "4px"} : {}} onClick={() => setActiveMenu('Details')}>Project Details <TbListDetails /></li>
+
+            <li style={activeMenu === "Styling" ? {backgroundColor: "black", color: "white", padding: "10px", borderRadius: "4px"} : {}} onClick={() => setActiveMenu('Styling')}>Styling <GiPaintBrush/></li>
+
+            <li style={activeMenu === "Upload" ? {backgroundColor: "black", color: "white", padding: "10px", borderRadius: "4px"} : {}} onClick={() => setActiveMenu('Upload')}>Upload <BiImageAdd /></li>
+
+            <li style={activeMenu === "Products" ? {backgroundColor: "black", color: "white", padding: "10px", borderRadius: "4px"} : {}} onClick={() => setActiveMenu('Products')}>Products <BsFillCartCheckFill /></li>
+
+            <li style={activeMenu === "Pages" ? {backgroundColor: "black", color: "white", padding: "10px", borderRadius: "4px"} : {}} onClick={() => setActiveMenu('Pages')}>Add Pages <SiPowerpages /></li>
           </ul>
+          <img className='customize-gif' src={gif} />
         </div>
         <div className="formDiv">
           {renderForm()}
@@ -141,7 +152,7 @@ const ProjectCustomizationForm: React.FC = () => {
                 Save
               </button>
             )}
-            <button disabled={!active} type="submit" className="button" onClick={handlePublish}>
+            <button disabled={!active} type="submit" className="button publish" onClick={handlePublish}>
               Publish
             </button>
           </div>

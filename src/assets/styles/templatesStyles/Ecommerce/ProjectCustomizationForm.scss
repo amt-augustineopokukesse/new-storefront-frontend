@@ -1,3 +1,44 @@
+.radio-item-point {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-container {
+  label {
+    transition: all 100ms;            
+    // position: absolute;
+    font-family: 'Poppins';
+    color: #a1a1a1;
+    font-weight: bold;
+  }
+  &:hover {
+    label {
+      font-weight: bold;
+      // position: absolute;
+      top: -8px;
+      font-size: 12px;
+      padding: 3px;
+      background: #fff;
+      color: #7e7979;
+    }
+  }
+}
+
+.group-input {
+  height: 30px;
+  border: none;          
+  outline: none;          
+  margin-bottom: 15px;          
+  margin-top: 25px;          
+  padding-left: 10px;        
+  letter-spacing: 1px;      
+  &:focus {            
+    border-bottom: 0.1px solid rgb(160, 160, 160);          
+  }
+}
+
 .customization-container {
   width: 100%;
   height: 70%;
@@ -6,7 +47,9 @@
   align-items: center;
   .form-header {
     position: relative;
-    color: royalblue;
+    color: #151b2b;
+    font-family: 'Poppins';
+    font-size: 20px;
   }
   
   .template-customization {
@@ -15,24 +58,47 @@
     display: flex;
     justify-content: space-between;
     .sidebar {
-      width: 30%;
-      height: 100%;
-      background-color: rgb(222, 223, 228);
-      padding: 20px;
+          width: 30%;
+          height: 100%;
+          background-color: rgb(255, 255, 255);
+          /* padding: 10px; */
+          padding-right: 30px;
+          position: relative;
+          border-right: 6px solid;
+      .customize-gif {
+        position: absolute;
+        /* margin-top: 10px; */
+        bottom: -53px;
+        left: 9px;
+      }
       ul {
         list-style: none;
         padding: 0;
       }
       
       li {
-        margin-bottom: 10px;
+        margin-bottom: 18px;
         cursor: pointer;
         transition: color 0.3s ease;
-        color: royalblue;
+        color: #222222;
         font-size: 20px;
-        text-align: center;
+        font-weight: 800;
+        font-family: "Poppins";
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        /* gap: 5px; */
+        justify-content: space-between;
+        width: 174px;
+        svg {
+          display: none;
+        }
         &:hover {
-          color: rgb(119, 71, 71);
+          border-left: 4px solid gold;
+          padding-left: 5px;
+          svg {
+            display: flex;
+          }
         }
       }
       
@@ -48,33 +114,91 @@
         flex-direction: column;
         gap: 3%;
         overflow-y: scroll;
+        &::-webkit-scrollbar {
+          // color: red;
+          background: #484848;
+          width: 2px;
+          border-radius: 8px;
+        }
         .label {
           font-weight: bold;
         }
         .select-containers, .input-containers {
           display: flex;
           flex-direction: column;
+          /* border: 1px solid; */
+          border-radius: 4px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          padding-left: 9px;
+          margin-bottom: 20px;
+          position: relative;
+          label {
+            transition: all 100ms;            
+            position: absolute;
+            font-family: 'Poppins';
+            color: #a1a1a1;
+            font-weight: bold;
+          }
+          &:hover {
+            label {
+              font-weight: bold;
+              position: absolute;
+              top: -8px;
+              font-size: 12px;
+              padding: 3px;
+              background: #fff;
+              color: #7e7979;
+            }
+          }
         }
         .input {
-          width: 80%;
-          padding: 8px;
+          width: 90%;
+          height: 30px;
+          border: none;
+          outline: none;
+          margin-bottom: 5px;
+          margin-top: 30px;
+          padding-left: 10px;
+          letter-spacing: 1px;          
+          &:focus {
+            border-bottom: 0.1px solid rgb(160, 160, 160);
+          }
         }
         
         .select {
-          width: 70%;
-          padding: 8px;
-          cursor: pointer;
+          width: 90%;
+          height: 30px;
+          border: none;
+          outline: none;
+          margin-bottom: 5px;
+          margin-top: 30px;
+          padding-left: 10px;
+          letter-spacing: 1px;
+          &:focus {
+            border-bottom: 0.1px solid rgb(160, 160, 160);
+          }
+          
         }
         .color-input {
           width: 30%;
+          height: 30px;
           position: relative;
           left: 5%;
+          margin-bottom: 5px;
+          margin-top: 30px;
+          padding-left: 10px;
           cursor: pointer;
+          border: none;
+          outline: none;
+          border-radius: 4px;
         }
         .upload, .add-product {
           cursor: pointer;
+          height: 34px;
+          width: 91px;
           border: none;
-          background-color: #007bff;
+          border-radius: 4px;
+          background-color: #66727e;
           color: white;
           box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.25);
           &:hover {
@@ -91,23 +215,30 @@
         justify-content: space-between;
         .button {
           width: 45%;
-          background-color: #007bff;
           color: #ffffff;
           padding: 10px;
           border: none;
           cursor: pointer;
           box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.25);
+          border-radius: 4px;
         }
-        .save {
+        .save, .update {
           background-color: #ffffff;
-          color: #007bff;
-          
+          color: #000000;
+          border: 1px solid #000;     
+          &:hover {
+            background-color: #3cae9f;
+            color: #fff;
+            border: none;
+          }  
         }
-      }
-      
-      
-      .button:hover {
-        background-color: #0056b3;
+        .publish {
+          color: #fff;
+          background-color: #000;
+          &:hover {
+            background-color: #454545;
+          }
+        }
       }
     }  
   }
@@ -151,6 +282,10 @@
 
 #aboutUs {
   padding: 3px;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  margin: 28px 12px;
+  border: 1px solid black;
 }
 
 

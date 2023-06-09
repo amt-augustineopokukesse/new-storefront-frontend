@@ -4,6 +4,7 @@ import { AuthLoader } from "../../../components/authComponents/AuthLoader";
 import api from "../../../Redux/axiosClient";
 import { setBannerUrl } from "../../../Redux/Templates/ProjectSlice";
 import { toast } from "react-toastify";
+import { BsFillCloudUploadFill } from "react-icons/bs";
 
 const UploadForm: React.FC = () => {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -67,7 +68,7 @@ const UploadForm: React.FC = () => {
         onClick={handleUploadButtonClick}
         className="upload"
       >
-        Upload
+        <BsFillCloudUploadFill />
       </button>
       {loader ? <AuthLoader /> : ""}
     </form>

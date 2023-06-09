@@ -140,22 +140,29 @@ export const StylingForm: React.FC<{ project: ProjectState }> = ({ project }) =>
       <div className="input-containers">
         <label className="label">Carousel:</label>
         <div className="radio-group">
-          <input
-            type="radio"
-            name="carousel"
-            value="on"
-            checked={project.template.carouselInclude}
-            onChange={handleCarouselToggle}
-          />
-          <label className="radio-label">On</label>
-          <input
-            type="radio"
-            name="carousel"
-            value="off"
-            checked={!project.template.carouselInclude}
-            onChange={handleCarouselToggle}
-          />
-          <label className="radio-label">Off</label>
+
+          <div className="group-input">
+            <div className="radio-item-point">
+              <input
+                type="radio"
+                name="carousel"
+                value="on"
+                checked={project.template.carouselInclude}
+                onChange={handleCarouselToggle}
+              />
+              <span className="radio-label">On</span>
+            </div>
+            <div className="radio-item-point">
+              <input
+                type="radio"
+                name="carousel"
+                value="off"
+                checked={!project.template.carouselInclude}
+                onChange={handleCarouselToggle}
+              />
+              <span className="radio-label">Off</span>
+            </div>
+          </div>
         </div>
       </div>    
       </form>
